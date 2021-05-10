@@ -13,10 +13,14 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
+    height: '100%',
   },
   media: {
-    height: 140,
+    height: 100,
   },
+  link: {
+    color: 'black'
+  }
 });
 
 const ProductsCard = ({ item }) => {
@@ -26,11 +30,12 @@ const ProductsCard = ({ item }) => {
 
 return (
   <Card className={classes.root}>
+    <Link className={classes.link} to={`/details/${item.id}`} >
       <CardActionArea>
         <CardMedia
           className={classes.media}
           image={item.image}
-          title="Contemplative Reptile"
+          title="Chigo"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -41,6 +46,7 @@ return (
           </Typography>
         </CardContent>
       </CardActionArea>
+      </Link>
       <CardActions>
         <Link to='/edit'>
         <Button onClick={() => editProduct(item.id)} size="small" color="primary">

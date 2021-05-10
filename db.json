@@ -1,60 +1,28 @@
 {
   "products": [
     {
-      "title": "Chigo Moon 156",
-      "description": "3D DC inverter, high efficiency and energy saving  Wifi  -30°C~60°C operation  I FEEL  4D air supply",
+      "title": "Chigo King 172",
+      "description": "Chigo",
       "price": "350$",
-      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041846072504.png",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041851091617.png",
+      "category": "Wall Split Type",
       "id": 1
     },
     {
-      "title": "123",
-      "description": "123",
-      "price": "123",
-      "image": "123",
+      "title": "Zondas 41",
+      "description": "Chigo",
+      "price": "1100$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041859501680.png",
+      "category": "Floor Standing Type",
       "id": 2
     },
     {
-      "title": "123123",
-      "description": "1231",
-      "price": "1",
-      "image": "23123",
+      "title": "Chigo 19",
+      "description": "Chigo",
+      "price": "200$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041912418438.png",
+      "category": "Portable",
       "id": 3
-    },
-    {
-      "title": "12312",
-      "description": "123",
-      "price": "123",
-      "image": "123",
-      "id": 4
-    },
-    {
-      "title": "123123",
-      "description": "123",
-      "price": "123",
-      "image": "13",
-      "id": 5
-    },
-    {
-      "title": "123123",
-      "description": "1231",
-      "price": "123",
-      "image": "123123",
-      "id": 6
-    },
-    {
-      "title": "123123",
-      "description": "123123",
-      "price": "123",
-      "image": "13212",
-      "id": 7
-    },
-    {
-      "title": "22222",
-      "description": "222222",
-      "price": "2222",
-      "image": "222",
-      "id": 8
     }
   ]
 }

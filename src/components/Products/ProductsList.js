@@ -5,6 +5,7 @@ import ProductsCard from './ProductsCard'
 import ProductsImage from '../../assets/img/product-list-img.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
+import Sidebar from '../HomePage/Sidebar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,7 +43,8 @@ const ProductsList = () => {
     
     return (
         <div className='products'>
-            <img style={{width : '1300px'}} src={ProductsImage} />
+            <img style={{width : '1300px'}} src={ProductsImage} alt='chigo' />
+            <Sidebar />
             {productsData.map(item => (
                 <ProductsCard key={item.id} item={item} />
             ))}
