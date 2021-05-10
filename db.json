@@ -23,6 +23,54 @@
       "image": "http://www.chigogroup.com/upload/portal/20200604/202006041912418438.png",
       "category": "Portable",
       "id": 3
+    },
+    {
+      "title": "1",
+      "description": "1",
+      "price": "1",
+      "image": "1",
+      "category": "Wall Split Type",
+      "id": 4
+    },
+    {
+      "title": "1",
+      "description": "1",
+      "price": "1",
+      "image": "11",
+      "category": "",
+      "id": 5
+    },
+    {
+      "title": "123",
+      "description": "123",
+      "price": "123",
+      "image": "123",
+      "category": "",
+      "id": 6
+    },
+    {
+      "title": "333",
+      "description": "3",
+      "price": "333",
+      "image": "33",
+      "category": "",
+      "id": 7
+    },
+    {
+      "title": "4",
+      "description": "4",
+      "price": "5",
+      "image": "6",
+      "category": "",
+      "id": 8
+    },
+    {
+      "title": "123",
+      "description": "12",
+      "price": "312",
+      "image": "3123",
+      "category": "",
+      "id": 9
     }
   ]
 }

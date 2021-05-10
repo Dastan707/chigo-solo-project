@@ -8,11 +8,14 @@ import ProductsContextProvider from './contexts/ProductsContext';
 import AddProducts from './components/AddProducts/AddProducts';
 import EditProducts from './components/EditProduct/EditProducts';
 import ProductsDetails from './components/Products/ProductsDetails';
+import AuthContextProvider from './contexts/AuthContext';
+import Register from './components/Register/Register';
 
 const Routes = () => {
     return (
         <div>
             <ProductsContextProvider>
+            <AuthContextProvider>
             <Router>
             <Header />
                 <Switch>
@@ -21,9 +24,11 @@ const Routes = () => {
                     <Route exact path='/edit' component={EditProducts} />
                     <Route exact path='/products' component={ProductsList} />
                     <Route exact path={`/details/:id`} component={ProductsDetails} />
+                    <Route exact path='/register' component={Register} />
                 </Switch>
                 <Footer/>
             </Router>
+            </AuthContextProvider>
             </ProductsContextProvider>
         </div>
     );
