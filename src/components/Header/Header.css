@@ -29,6 +29,7 @@ body{
     justify-content: space-around;
     list-style-type: none;
     padding: 0 20px;
+    position: relative;
 }
 
 .navbar__right a{
@@ -49,13 +50,12 @@ body{
     /* border: 1px solid #BFBFBF;
     padding: 0; */ 
 
-    width: 100%;
+    max-width: 100%;
     z-index: 10;
-
     background: #EFF3FA;
     border-radius: 10px;
     min-height: 85px;
-    padding: 11px 18px;
+    padding: 13px 20px;
     font-weight: 300;
     font-size: 15px;
     line-height: 110%;

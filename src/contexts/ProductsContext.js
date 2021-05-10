@@ -9,13 +9,14 @@ export const productsContext = React.createContext();
 const INIT_STATE = {
       productsData: [],
       productToEdit: [],
-      searchData: []
+      searchData: [],
+      paginationPages: 1
 }
 
 const reducer = (state = INIT_STATE, action) => {
     switch(action.type){
         case  "GET_PRODUCTS" :
-            return {...state, productsData: action.payload.data}   
+            return {...state, productsData: action.payload.data, paginationPages: Math.ceil(action.payload.headers["x-total-count"] / 4)}   
         case "EDIT_PRODUCTS" :
             return {...state, productToEdit: action.payload}
         case "SEARCH" :
@@ -26,7 +27,8 @@ const reducer = (state = INIT_STATE, action) => {
 
 const ProductsContextProvider = ({ children }) => {
     const  history = useHistory();
-    const [state, dispatch] = useReducer(reducer, INIT_STATE)
+    const [state, dispatch] = useReducer(reducer, INIT_STATE);
+    
     const getProducts = async(history) => {
         const search = new URLSearchParams(history.location.search)
         search.set('_limit', 6)
@@ -82,6 +84,7 @@ const ProductsContextProvider = ({ children }) => {
             productsData: state.productsData,
             productToEdit: state.productToEdit,
             searchData: state.searchData,
+            paginationPages: state.paginationPages,
             getProducts,
             postProduct,
             saveProduct,

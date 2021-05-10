@@ -31,7 +31,9 @@ const Header = () => {
                     <li className='navbar__list'>NEWS</li>
                     <li className='navbar__list'>CONTACT US</li>
                 </ul>
+                <li className='search-item'>
                     <input type='text' className='inp-search' onChange={handleValue} />
+                
                     <div className={searchValue ? 'search-result' : 'close'}>
                             {searchData.map(item => (
                                 <Link to={`/details/${item.id}`}>
@@ -42,6 +44,7 @@ const Header = () => {
                                 </Link>
                             ))}
                         </div>
+                        </li>
             </div>
         </header>
     );
