@@ -70,7 +70,7 @@ const AuthContextProvider = ({ children }) => {
             loginUser,
             logoutUser
         }}>
-
+            {children}
         </authContext.Provider>
     );
 };

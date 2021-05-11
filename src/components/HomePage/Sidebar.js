@@ -2,17 +2,17 @@ import React, { useContext, useState } from 'react';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { makeStyles, Paper } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import { productsContext } from '../../contexts/ProductsContext';
 import { useHistory } from 'react-router';
 
-const useStyles = makeStyles((theme) => ({
-  }));
+// const useStyles = makeStyles((theme) => ({
+//   }));
 
 const Sidebar = () => {
     const history = useHistory();
 
-    const classes = useStyles();
+    // const classes = useStyles();
 
   const { getProducts } = useContext(productsContext)
   const [memory, setMemory] = useState(getMemory());
