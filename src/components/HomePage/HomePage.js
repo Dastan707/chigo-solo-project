@@ -1,11 +1,13 @@
 import React from 'react';
-import MainCarousel from '../Carousel/Carousel';
+import HeaderCarousel from '../Carousel/Carousel';
+import MainCarousel from '../MainCarousel/MainCarousel';
 
 
 
 const HomePage = () => {
     return (
         <div>
+            <HeaderCarousel />
             <MainCarousel />
         </div>
     );

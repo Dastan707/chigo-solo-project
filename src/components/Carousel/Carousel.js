@@ -5,7 +5,7 @@ import Image1 from '../../assets/img/slider-img.jpg'
 import Image2 from '../../assets/img/slider-img2.jpg'
 import Image3 from '../../assets/img/slider-img3.jpg'
 
-const MainCarousel = () => {
+const HeaderCarousel = () => {
     return (
         <div>
             <Carousel showThumbs={false}>
@@ -23,4 +23,4 @@ const MainCarousel = () => {
     );
 };
 
-export default MainCarousel;
+export default HeaderCarousel;

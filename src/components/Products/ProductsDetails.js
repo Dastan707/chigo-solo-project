@@ -4,7 +4,7 @@ import { productsContext } from '../../contexts/ProductsContext';
 import './ProductsDetails.css'
 
 const ProductsDetails = ({ props }) => {
-    console.log(props);
+    // console.log(props);
     const { id } = useParams()
     const { productsDetails, getProductsDetails } = useContext(productsContext);
 

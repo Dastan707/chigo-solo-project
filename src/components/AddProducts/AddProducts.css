@@ -19,6 +19,8 @@
     border: 2px solid #bbbbbb;
     margin-top: 10px;
     text-align: center;
+    margin-bottom: 20px;
+
 }
 
 .inp-add:focus {
@@ -37,6 +39,6 @@
     margin-bottom: 30px;
     display: flex;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px 130px;
 }

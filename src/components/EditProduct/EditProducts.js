@@ -6,11 +6,12 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
+import './EditProducts.css'
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin: theme.spacing(1),
-        minWidth: 120,
+        minWidth: 270,
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -75,11 +76,14 @@ const EditProducts = (props) => {
     }
 
     return (
-        <div className={classes.root}>
-            <input type='text' name='title' value={newEditItem.title} onChange={handleInputTitle}  placeholder='Title' />
-            <input type='text' name='description' value={newEditItem.description} onChange={handleInputDesc} placeholder='Description' />
-            <input type='text' name='price' value={newEditItem.price} onChange={handleInputPrice} placeholder='Price' />
-            <input type='text' name='image' value={newEditItem.image} onChange={handleInputImage} placeholder='Image' />
+        <>
+        <div className='inps-edit'>
+        {/* <div className={classes.root}> */}
+            <input type='text' className='inp-edit' name='title' value={newEditItem.title} onChange={handleInputTitle}  placeholder='Title' />
+            <input type='text' className='inp-edit' name='description' value={newEditItem.description} onChange={handleInputDesc} placeholder='Description' />
+            <input type='text' className='inp-edit' name='price' value={newEditItem.price} onChange={handleInputPrice} placeholder='Price' />
+            <input type='text' className='inp-edit' name='image' value={newEditItem.image} onChange={handleInputImage} placeholder='Image' />
+            
             <FormControl className={classes.formControl}>
                 <InputLabel  id="demo-simple-select-label">{newEditItem.category}</InputLabel>
                 <Select
@@ -95,8 +99,10 @@ const EditProducts = (props) => {
                     <MenuItem value='Portable'>Portable</MenuItem>
                 </Select>
             </FormControl>
-            <button onClick={() => saveProduct(newEditItem, props.history)}>Save</button>
+            <button className='btn-edit' onClick={() => saveProduct(newEditItem, props.history)}>Save</button>
+        {/* </div> */}
         </div>
+        </>
     );
 };
 
