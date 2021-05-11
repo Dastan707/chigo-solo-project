@@ -3,7 +3,6 @@ import { JSON_API } from '../helpers/constants';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 
-
 export const productsContext = React.createContext();
 
 const INIT_STATE = {
@@ -11,7 +10,8 @@ const INIT_STATE = {
       productToEdit: [],
       searchData: [],
       paginationPages: 1,
-      productsDetails: {}
+      productsDetails: {},
+      favorites: {},
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -24,13 +24,17 @@ const reducer = (state = INIT_STATE, action) => {
             return {...state, productToEdit: action.payload}
         case "SEARCH" :
             return {...state, searchData: action.payload}
+        case "GET_FAVORITES":
+            return {
+                ...state,
+                favorites: action.payload
+            };
     default: return state
     }
 }
 
 const ProductsContextProvider = ({ children }) => {
     const  history = useHistory();
-    const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
     const getProducts = async(history) => {
         const search = new URLSearchParams(history.location.search)
@@ -87,7 +91,56 @@ const ProductsContextProvider = ({ children }) => {
             payload: data
         })
     }
+
+    function addProductToFavo(product) {
+        let favorites = JSON.parse(localStorage.getItem('favorites'));
+        if (!favorites) {
+            favorites = {
+                products: [],
+            }
+        }
+
+        let newProduct = {
+            item: product,
+        }
+
+        let filteredFavorites = favorites.products.filter(elem => elem.item.id === product.id)
+        if (filteredFavorites.length > 0) {
+            favorites.products = favorites.products.filter(elem => elem.item.id !== product.id)
+        } else {
+            favorites.products.push(newProduct)
+        }
+        localStorage.setItem('favorites', JSON.stringify(favorites))
+    }
+
+    function getFavo() {
+        let favorites = JSON.parse(localStorage.getItem('favorites'));
+        if (!favorites) {
+            favorites = {
+                products: [],
+            }
+        }
+        dispatch({
+            type: "GET_FAVORITES",
+            payload: favorites
+        })
+    }
+
+
+    // function checkProductInFavo(id) {
+    //     let favorites = JSON.parse(localStorage.getItem('favorites'));
+    //     if (!favorites) {
+    //         favorites = {
+    //             products: [],
+    //         }
+    //     }
+    //     let newFavorites = favorites.products.filter(elem => elem.item.id === id)
+    //     return newFavorites.length > 0 ? true : false
+    // }
     
+
+    
+    const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
     return (
         <productsContext.Provider value={{
@@ -96,13 +149,17 @@ const ProductsContextProvider = ({ children }) => {
             searchData: state.searchData,
             paginationPages: state.paginationPages,
             productsDetails: state.productsDetails,
+            favorites: state.favorites,
             getProducts,
             getProductsDetails,
             postProduct,
             saveProduct,
             deleteProduct,
             editProduct,
-            searchProduct
+            searchProduct,
+            addProductToFavo,
+            getFavo,
+            // checkProductInFavo
         }}>
             {children}
         </productsContext.Provider>

@@ -6,13 +6,17 @@ import { makeStyles } from "@material-ui/core";
 import { productsContext } from '../../contexts/ProductsContext';
 import { useHistory } from 'react-router';
 
-// const useStyles = makeStyles((theme) => ({
-//   }));
+
+const useStyles = makeStyles((theme) => ({
+  radio: {
+    display: 'inline',
+  }
+  }));
 
 const Sidebar = () => {
     const history = useHistory();
 
-    // const classes = useStyles();
+    const classes = useStyles();
 
   const { getProducts } = useContext(productsContext)
   const [memory, setMemory] = useState(getMemory());
@@ -35,8 +39,8 @@ const Sidebar = () => {
     setMemory(e.target.value)
   };
   return (
-    <div>
-        <RadioGroup aria-label="memory" name="memory1" value={memory} onChange={handleChangeMemory}>
+    <div className='radio-group' style={{textAlign: 'center', marginBottom: '50px', backgroundColor: '#f2f2f2'}}>
+        <RadioGroup className={classes.radio} aria-label="memory" name="memory1" value={memory} onChange={handleChangeMemory}>
         <FormControlLabel value="Wall Split Type" control={<Radio />} label="Wall Split Type" />
             <FormControlLabel value="Floor Standing Type" control={<Radio />} label="Floor Standing Type" />
             <FormControlLabel value="Portable" control={<Radio />} label="Portable" />

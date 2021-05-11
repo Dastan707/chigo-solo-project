@@ -2,7 +2,7 @@
   "products": [
     {
       "title": "Chigo King 172",
-      "description": "Chigo",
+      "description": "Environmental refrigerant  High-quality compressor  -30°C~60°C operation  4D air supply  More options",
       "price": "350$",
       "image": "http://www.chigogroup.com/upload/portal/20200604/202006041851091617.png",
       "category": "Wall Split Type",
@@ -10,19 +10,11 @@
     },
     {
       "title": "Zondas 41",
-      "description": "Zondas",
+      "description": "Fast cooling  Internal thread copper pipe  High-quality compressor  Wide voltage operation",
       "price": "1100$",
       "image": "http://www.chigogroup.com/upload/portal/20200604/202006041859501680.png",
       "category": "Floor Standing Type",
       "id": 2
-    },
-    {
-      "title": "Chigo 19",
-      "description": "Chigo 19",
-      "price": "200$",
-      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041912418438.png",
-      "category": "Portable",
-      "id": 3
     },
     {
       "title": "1",
@@ -71,6 +63,14 @@
       "image": "3123",
       "category": "",
       "id": 9
+    },
+    {
+      "title": "Chigo Alba 152",
+      "description": "Environmental refrigerant  High-quality compressor  -30°C~60°C operation  4D air supply  More options",
+      "price": "450$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041843358604.png",
+      "category": "Wall Split Type",
+      "id": 10
     }
   ]
 }

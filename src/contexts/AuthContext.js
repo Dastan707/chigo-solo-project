@@ -5,7 +5,7 @@ import app from "../base.js";
 export const authContext = React.createContext();
 
 const INIT_STATE = {
-
+    isAuth:false
 }
 
 const reducer = (state = INIT_STATE, action) => {

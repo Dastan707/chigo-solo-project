@@ -13,10 +13,13 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    height: '100%',
+    maxHeight: '100%',
+  },
+  title: {
+    textAlign: 'center'
   },
   media: {
-    height: 100,
+    height: '300px',
   },
   link: {
     color: 'black'
@@ -26,7 +29,7 @@ const useStyles = makeStyles({
 const ProductsCard = ({ item }) => {
   const classes = useStyles();
 
-  const { deleteProduct, editProduct } = useContext(productsContext);
+  const { deleteProduct, editProduct, addProductToFavo } = useContext(productsContext);
 
 return (
   <Card className={classes.root}>
@@ -38,11 +41,11 @@ return (
           title="Chigo"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography className={classes.title} gutterBottom variant="h5" component="h2">
             {item.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {item.description}
+            {item.description.slice(0, 100)}...
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -55,6 +58,9 @@ return (
         </Link>
         <Button onClick={() => deleteProduct(item.id)} size="small" color="primary">
           Delete
+        </Button>
+        <Button  onClick={() => addProductToFavo(item)}  size="small" color="primary">
+          Add to Favorites
         </Button>
       </CardActions>
     </Card>

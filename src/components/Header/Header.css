@@ -45,7 +45,7 @@ body{
     max-width: 100%;
     z-index: 10;
     background: #EFF3FA;
-    border-radius: 10px;
+    border-radius: 15px;
     min-height: 85px;
     padding: 13px 20px;
     font-weight: 300;
@@ -82,11 +82,12 @@ body{
 .inp-search{
     margin-top: 0;
     width: 150px;
-    height: 30px;
+    height: 22px;
     border: none;
     font-family: "Rubik", -apple-system;
     font-weight: 400;
     font-size: 20px;
-    border: 2px solid black;
+    border-radius: 20px;
+    border: 1px solid #bbbbbb;
 }
   

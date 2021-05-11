@@ -1,0 +1,16 @@
+.details{
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.details-img{
+    width: 100%;
+    height: 100%;
+    max-width: none;
+}
+
+.details-desc{
+    width: 100%;
+    height: 100%;
+}
