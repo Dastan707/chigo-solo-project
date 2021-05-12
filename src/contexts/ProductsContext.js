@@ -127,16 +127,16 @@ const ProductsContextProvider = ({ children }) => {
     }
 
 
-    // function checkProductInFavo(id) {
-    //     let favorites = JSON.parse(localStorage.getItem('favorites'));
-    //     if (!favorites) {
-    //         favorites = {
-    //             products: [],
-    //         }
-    //     }
-    //     let newFavorites = favorites.products.filter(elem => elem.item.id === id)
-    //     return newFavorites.length > 0 ? true : false
-    // }
+    function checkProductInFavo(id) {
+        let favorites = JSON.parse(localStorage.getItem('favorites'));
+        if (!favorites) {
+            favorites = {
+                products: [],
+            }
+        }
+        let newFavorites = favorites.products.filter(elem => elem.item.id === id)
+        return newFavorites.length > 0 ? true : false
+    }
     
 
     
@@ -159,7 +159,7 @@ const ProductsContextProvider = ({ children }) => {
             searchProduct,
             addProductToFavo,
             getFavo,
-            // checkProductInFavo
+            checkProductInFavo
         }}>
             {children}
         </productsContext.Provider>

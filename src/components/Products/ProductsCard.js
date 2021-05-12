@@ -9,6 +9,11 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { productsContext } from '../../contexts/ProductsContext';
 import { Link } from 'react-router-dom';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+import BookmarkIcon from '@material-ui/icons/Bookmark';
+import IconButton from "@material-ui/core/IconButton";
+
 
 const useStyles = makeStyles({
   root: {
@@ -23,13 +28,17 @@ const useStyles = makeStyles({
   },
   link: {
     color: 'black'
+  },
+  icons: {
+    display: 'flex',
+    justifyContent: 'center'
   }
 });
 
 const ProductsCard = ({ item }) => {
   const classes = useStyles();
 
-  const { deleteProduct, editProduct, addProductToFavo } = useContext(productsContext);
+  const { deleteProduct, editProduct, addProductToFavo, checkProductInFavo } = useContext(productsContext);
 
 return (
   <Card className={classes.root}>
@@ -50,18 +59,24 @@ return (
         </CardContent>
       </CardActionArea>
       </Link>
-      <CardActions>
+      <CardActions  className={classes.icons}>
         <Link to='/edit'>
         <Button onClick={() => editProduct(item.id)} size="small" color="primary">
-          Edit
+        <EditIcon fontSize='medium' />
         </Button>
         </Link>
         <Button onClick={() => deleteProduct(item.id)} size="small" color="primary">
-          Delete
+        <DeleteIcon  fontSize='medium' />
         </Button>
-        <Button  onClick={() => addProductToFavo(item)}  size="small" color="primary">
-          Add to Favorites
-        </Button>
+        {/* <Button  onClick={() => addProductToFavo(item)}  size="small" color="primary">
+        <BookmarkIcon  fontSize='medium' color={checkProductInFavo(item.id)? 'secondary' : 'primary'} />
+        </Button> */}
+        <IconButton
+                    onClick={() => addProductToFavo(item)}
+                    color={checkProductInFavo(item.id)? 'secondary' : 'primary'}
+                    aria-label="share">
+                    <BookmarkIcon />
+                </IconButton>
       </CardActions>
     </Card>
 )

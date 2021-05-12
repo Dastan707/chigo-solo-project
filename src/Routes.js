@@ -12,6 +12,7 @@ import AuthContextProvider from './contexts/AuthContext';
 import Register from './components/Register/Register';
 import LogIn from './components/LogIn/LogIn';
 import Favorites from './components/Favorites/Favorites';
+// import Payment from './components/Payment/Payment';
 
 const Routes = () => {
     return (
@@ -29,6 +30,7 @@ const Routes = () => {
                     <Route exact path='/register' component={Register} />
                     <Route exact path='/login' component={LogIn} />
                     <Route exact path='/products/favorites' component={Favorites} />
+                    {/* <Route exact path='/products/payment' component={Payment} /> */}
                 </Switch>
                 <Footer/>
             </Router>

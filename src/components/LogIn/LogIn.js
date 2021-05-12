@@ -24,7 +24,7 @@ const LogIn = () => {
                         <input onChange={handleInputs} type="text" id="email" name="email" placeholder="email" />
                         <input onChange={handleInputs} type="text" id="password" name="password" placeholder="password" />
                         <button type="submit">login</button>
-                        <Link to='/regist'>
+                        <Link to='/register'>
                             <p className="message">Not registered? Create an account</p>
                         </Link>
                     </form>
