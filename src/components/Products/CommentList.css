@@ -1,0 +1,17 @@
+.btn-delete{
+    width: 70px;
+    height: 25px;
+    background-color: #f2f2f2;
+    margin-top: 100px;
+}
+
+.desc-list{
+    width: 500px;
+    height: 200px;
+    background-color: #f2f2f2;
+}
+
+.desc-list li{
+    margin-bottom: 20px;
+    padding-top: 20px;
+}

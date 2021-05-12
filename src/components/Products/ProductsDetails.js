@@ -63,13 +63,14 @@ const ProductsDetails = ({ props }) => {
 
                 </div>
             </div>
+            
             <div className='comments'>
-                <input onChange={(e) => setInpDesc(e.target.value)} value={inpDesc} type='text' />
-                <button onClick={handleClick}>Add Comment</button>
-            </div>
+                <input className='inp-comm' onChange={(e) => setInpDesc(e.target.value)} value={inpDesc} type='text' placeholder='Leave your comment... ' />
+                <button className='btn-comm' onClick={handleClick}>Send</button>
             <div className='all-comments'>
             <CommentsList />
              </div>
+            </div>
             <img style={{ width: '100%' }} src='http://www.chigogroup.com/upload/ueditor/20200607/202006071820429957.jpg' />
         </>
     );
