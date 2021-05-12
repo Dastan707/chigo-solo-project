@@ -53,7 +53,6 @@ const ProductsList = () => {
                 {productsData.map(item => (
                     <Grid xs={12} sm={6} md={4}>
                         <CardContent className={classes.cardContent}>
-
                             <ProductsCard key={item.id} item={item} />
                         </CardContent>
                     </Grid>
@@ -68,7 +67,6 @@ const ProductsList = () => {
                     count={10}
                     variant="outlined"
                     color="secondary" />
-                    
             </div>
         </div>
 

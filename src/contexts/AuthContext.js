@@ -32,7 +32,7 @@ const AuthContextProvider = ({ children }) => {
             await app.auth()
                 .createUserWithEmailAndPassword(newUser.email, newUser.password);
             console.log(newUser.email, newUser.password);
-            history.push('/')
+            history.push('/login')
             console.log(currentUser);
         } catch (err) {
             console.log(err);

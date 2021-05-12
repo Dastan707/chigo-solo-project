@@ -33,9 +33,9 @@ const EditProducts = (props) => {
 
     useEffect(() => {
         setNewEditItem(productToEdit)
-    },[productToEdit]);
+    }, [productToEdit]);
 
-    function handleInputTitle(e){
+    function handleInputTitle(e) {
         let newEditedProduct = {
             ...newEditItem,
             title: e.target.value
@@ -43,7 +43,7 @@ const EditProducts = (props) => {
         setNewEditItem(newEditedProduct)
     }
 
-    function handleInputDesc(e){
+    function handleInputDesc(e) {
         let newEditedProduct = {
             ...newEditItem,
             description: e.target.value
@@ -51,7 +51,7 @@ const EditProducts = (props) => {
         setNewEditItem(newEditedProduct)
     }
 
-    function handleInputPrice(e){
+    function handleInputPrice(e) {
         let newEditedProduct = {
             ...newEditItem,
             price: e.target.value
@@ -59,7 +59,7 @@ const EditProducts = (props) => {
         setNewEditItem(newEditedProduct)
     }
 
-    function handleInputImage(e){
+    function handleInputImage(e) {
         let newEditedProduct = {
             ...newEditItem,
             image: e.target.value
@@ -67,7 +67,7 @@ const EditProducts = (props) => {
         setNewEditItem(newEditedProduct)
     }
 
-    function handleInputCategory(e){
+    function handleInputCategory(e) {
         let newEditedProduct = {
             ...newEditItem,
             category: e.target.value
@@ -77,31 +77,30 @@ const EditProducts = (props) => {
 
     return (
         <>
-        <div className='inps-edit'>
-        {/* <div className={classes.root}> */}
-            <input type='text' className='inp-edit' name='title' value={newEditItem.title} onChange={handleInputTitle}  placeholder='Title' />
-            <input type='text' className='inp-edit' name='description' value={newEditItem.description} onChange={handleInputDesc} placeholder='Description' />
-            <input type='text' className='inp-edit' name='price' value={newEditItem.price} onChange={handleInputPrice} placeholder='Price' />
-            <input type='text' className='inp-edit' name='image' value={newEditItem.image} onChange={handleInputImage} placeholder='Image' />
-            
-            <FormControl className={classes.formControl}>
-                <InputLabel  id="demo-simple-select-label">{newEditItem.category}</InputLabel>
-                <Select
-                className={classes.select}
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    // value={product.category}
-                    onChange={handleInputCategory}
-                    name='category'
-                >
-                    <MenuItem value='Wall Split Type'>Wall Split Type</MenuItem>
-                    <MenuItem value='Floor Standing Type'>Floor Standing Type</MenuItem>
-                    <MenuItem value='Portable'>Portable</MenuItem>
-                </Select>
-            </FormControl>
-            <button className='btn-edit' onClick={() => saveProduct(newEditItem, props.history)}>Save</button>
-        {/* </div> */}
-        </div>
+            <div className='inps-edit'>
+                {/* <div className={classes.root}> */}
+                <input type='text' className='inp-edit' name='title' value={newEditItem.title} onChange={handleInputTitle} placeholder='Title' />
+                <input type='text' className='inp-edit' name='description' value={newEditItem.description} onChange={handleInputDesc} placeholder='Description' />
+                <input type='text' className='inp-edit' name='price' value={newEditItem.price} onChange={handleInputPrice} placeholder='Price' />
+                <input type='text' className='inp-edit' name='image' value={newEditItem.image} onChange={handleInputImage} placeholder='Image' />
+                <FormControl className={classes.formControl}>
+                    <InputLabel id="demo-simple-select-label">{newEditItem.category}</InputLabel>
+                    <Select
+                        className={classes.select}
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        // value={product.category}
+                        onChange={handleInputCategory}
+                        name='category'
+                    >
+                        <MenuItem value='Wall Split Type'>Wall Split Type</MenuItem>
+                        <MenuItem value='Floor Standing Type'>Floor Standing Type</MenuItem>
+                        <MenuItem value='Portable'>Portable</MenuItem>
+                    </Select>
+                </FormControl>
+                <button className='btn-edit' onClick={() => saveProduct(newEditItem, props.history)}>Save</button>
+                {/* </div> */}
+            </div>
         </>
     );
 };

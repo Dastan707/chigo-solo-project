@@ -26,17 +26,17 @@ const Favorites = () => {
                 {favorites.products ? (
                     <div className='favo-block'>
                         {favorites.products.map(elem => (
-                                <ul className='favo-items' key={elem.item.id}>
-                                        <li>
-                                        <h1>{elem.item.title}</h1>
-                                        </li>
-                                        <li>
-                                            <img style={{ width: '100px' }} src={elem.item.image} alt='product-img' />
-                                        </li>
-                                        <li>
-                                        <h2>{elem.item.price}</h2>
-                                        </li>
-                                </ul>
+                            <ul className='favo-items' key={elem.item.id}>
+                                <li>
+                                    <h1>{elem.item.title}</h1>
+                                </li>
+                                <li>
+                                    <img style={{ width: '100px' }} src={elem.item.image} alt='product-img' />
+                                </li>
+                                <li>
+                                    <h2>{elem.item.price}</h2>
+                                </li>
+                            </ul>
                         ))}
                     </div>
                 ) : (<CircularProgress />)}

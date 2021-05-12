@@ -19,6 +19,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 345,
     maxHeight: '100%',
+    
   },
   title: {
     textAlign: 'center'

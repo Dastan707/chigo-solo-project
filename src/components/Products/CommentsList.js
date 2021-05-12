@@ -8,6 +8,7 @@ const CommentsList = () => {
     useEffect(()=>{
         getCommentsData()
     },[])
+    
     return (
         <div>
             {comments.map(item => (

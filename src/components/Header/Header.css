@@ -98,9 +98,3 @@ header{
     border: 1px solid #bbbbbb;
 }
   
-@media all and(max-width: 414px){
-    .navbar__right{
-        display: flex;
-        justify-content: flex-start;
-    }
-}

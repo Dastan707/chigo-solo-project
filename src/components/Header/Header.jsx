@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { productsContext } from '../../contexts/ProductsContext';
 
 const Header = () => {
-    const { searchProduct, searchData} = useContext(productsContext);
+    const { searchProduct, searchData } = useContext(productsContext);
     const [searchValue, setSearchValue] = useState('');
 
     const handleValue = (e) => {
@@ -33,18 +33,18 @@ const Header = () => {
                 </ul>
                 <li className='search-item'>
                     <input type='text' className='inp-search' onChange={handleValue} />
-                
+
                     <div className={searchValue ? 'search-result' : 'close'}>
-                            {searchData.map(item => (
-                                <Link to={`/details/${item.id}`}>
-                                    <div className='search-items'>
-                                        <img src={item.image} alt='images' /><br></br>
-                                        {item.title}
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                        </li>
+                        {searchData.map(item => (
+                            <Link to={`/details/${item.id}`}>
+                                <div className='search-items'>
+                                    <img src={item.image} alt='images' /><br></br>
+                                    {item.title}
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </li>
             </div>
         </header>
     );

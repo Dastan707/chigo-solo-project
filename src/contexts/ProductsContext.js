@@ -6,40 +6,40 @@ import { useHistory } from 'react-router';
 export const productsContext = React.createContext();
 
 const INIT_STATE = {
-      productsData: [],
-      productToEdit: [],
-      searchData: [],
-      paginationPages: 1,
-      productsDetails: {},
-      favorites: {},
-      comments: []
+    productsData: [],
+    productToEdit: [],
+    searchData: [],
+    paginationPages: 1,
+    productsDetails: {},
+    favorites: {},
+    comments: []
 }
 
 const reducer = (state = INIT_STATE, action) => {
-    switch(action.type){
-        case  "GET_PRODUCTS" :
-            return {...state, productsData: action.payload.data, paginationPages: Math.ceil(action.payload.headers["x-total-count"] / 4)}   
-        case "GET_PRODUCTS_DETAILS" : 
-            return {...state, productsDetails: action.payload}    
-        case "EDIT_PRODUCTS" :
-            return {...state, productToEdit: action.payload}
-        case "SEARCH" :
-            return {...state, searchData: action.payload}
+    switch (action.type) {
+        case "GET_PRODUCTS":
+            return { ...state, productsData: action.payload.data, paginationPages: Math.ceil(action.payload.headers["x-total-count"] / 4) }
+        case "GET_PRODUCTS_DETAILS":
+            return { ...state, productsDetails: action.payload }
+        case "EDIT_PRODUCTS":
+            return { ...state, productToEdit: action.payload }
+        case "SEARCH":
+            return { ...state, searchData: action.payload }
         case "GET_FAVORITES":
             return {
                 ...state,
                 favorites: action.payload
             };
-        case "GET_COMMENTS_DATA" :
-            return {...state, comments: action.payload}
-    default: return state
+        case "GET_COMMENTS_DATA":
+            return { ...state, comments: action.payload }
+        default: return state
     }
 }
 
 const ProductsContextProvider = ({ children }) => {
-    const  history = useHistory();
+    const history = useHistory();
 
-    const getProducts = async(history) => {
+    const getProducts = async (history) => {
         const search = new URLSearchParams(history.location.search)
         search.set('_limit', 6)
         history.push(`${history.location.pathname}?${search.toString()}`)
@@ -50,7 +50,7 @@ const ProductsContextProvider = ({ children }) => {
         })
     }
 
-    async function getProductsDetails(id){
+    async function getProductsDetails(id) {
         let { data } = await axios.get(`${JSON_API}/${id}`)
         dispatch({
             type: "GET_PRODUCTS_DETAILS",
@@ -67,27 +67,27 @@ const ProductsContextProvider = ({ children }) => {
         history.push('/products')
     }
 
-    async function deleteProduct(id){ // удаление товара
+    async function deleteProduct(id) { // удаление товара
         await axios.delete(`${JSON_API}/${id}`)
 
         let res = await axios.get(`${JSON_API}`)
         dispatch({
-            type : "GET_PRODUCTS",
+            type: "GET_PRODUCTS",
             payload: res
         })
     }
 
-    async function editProduct(id){ // редактирование
+    async function editProduct(id) { // редактирование
         let { data } = await axios(`${JSON_API}/${id}`)
         // console.log(data);
         dispatch({
-            type : "EDIT_PRODUCTS",
-            payload : data
+            type: "EDIT_PRODUCTS",
+            payload: data
         })
     }
 
-    async function searchProduct(value){ // поиск товара
-        let  { data }  = await axios(`${JSON_API}?q=${value}`)
+    async function searchProduct(value) { // поиск товара
+        let { data } = await axios(`${JSON_API}?q=${value}`)
         // console.log(data);
         dispatch({
             type: "SEARCH",
@@ -142,7 +142,7 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     const getCommentsData = async () => {
-        let  { data }  = await axios.get(`${JSON_API_COMM}`)
+        let { data } = await axios.get(`${JSON_API_COMM}`)
         dispatch({
             type: 'GET_COMMENTS_DATA',
             payload: data
@@ -156,12 +156,12 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     const deleteComment = async (id) => {
-       await axios.delete(`${JSON_API_COMM}/${id}`)
+        await axios.delete(`${JSON_API_COMM}/${id}`)
         getCommentsData()
     }
-    
 
-    
+
+
     const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
     return (

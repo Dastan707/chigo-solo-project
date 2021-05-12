@@ -36,25 +36,24 @@ const MainCarousel = () => {
                     scrollOnDevice={true}
                 >
                     <Link to='/products' >
-
                         <div>
                             <img src='http://www.chigogroup.com/upload/portal/20200604/202006041851091617.png' alt='chigo' />
                         </div>
-                        </Link>
-                        <Link to='/products' >
-                    <div>
-                        <img src='http://www.chigogroup.com/upload/portal/20200604/202006041915156473.png' alt='chigo' />
-                    </div>
                     </Link>
                     <Link to='/products' >
-                    <div>
-                        <img src='http://www.chigogroup.com/upload/portal/20200604/202006041859501680.png' alt='chigo' />
-                    </div>
+                        <div>
+                            <img src='http://www.chigogroup.com/upload/portal/20200604/202006041915156473.png' alt='chigo' />
+                        </div>
                     </Link>
                     <Link to='/products' >
-                    <div>
-                        <img src='http://www.chigogroup.com/upload/portal/20200604/202006041843358604.png' alt='chigo' />
-                    </div>
+                        <div>
+                            <img src='http://www.chigogroup.com/upload/portal/20200604/202006041859501680.png' alt='chigo' />
+                        </div>
+                    </Link>
+                    <Link to='/products' >
+                        <div>
+                            <img src='http://www.chigogroup.com/upload/portal/20200604/202006041843358604.png' alt='chigo' />
+                        </div>
                     </Link>
                     <div>
                         <img src='http://www.chigogroup.com/upload/portal/20200604/202006041851091617.png' alt='chigo' />
@@ -65,12 +64,12 @@ const MainCarousel = () => {
 
                     <div>
                         <img src='http://www.chigogroup.com/upload/portal/20200604/202006041859501680.png' alt='chigo' />
-                        
+
                     </div>
                     <div>
                         <img src='http://www.chigogroup.com/upload/portal/20200604/202006041843358604.png' alt='chigo' />
                     </div>
-                    
+
                 </InfiniteCarousel>
             </div>
         </>

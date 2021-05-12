@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "title": "Chigo King 172",
-      "description": "Environmental refrigerant  High-quality compressor  -30°C~60°C operation  4D air supply  More options",
-      "price": "350$",
-      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041851091617.png",
-      "category": "Wall Split Type",
-      "id": 1
-    },
-    {
       "title": "Zondas 41",
       "description": "Fast cooling  Internal thread copper pipe  High-quality compressor  Wide voltage operation",
       "price": "1100$",
@@ -23,17 +15,57 @@
       "image": "http://www.chigogroup.com/upload/portal/20200604/202006041843358604.png",
       "category": "Wall Split Type",
       "id": 10
+    },
+    {
+      "title": "Chigo Aero 170",
+      "description": "Environmental refrigerant  High-quality compressor  -30°C~60°C operation  4D air supply  More options",
+      "price": "420$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041849432247.png",
+      "category": "Wall Split Type",
+      "id": 11
+    },
+    {
+      "title": "Chigo Rock  152",
+      "description": "Environmental refrigerant  High-quality compressor  -30°C~60°C operation  4D air supply  More options",
+      "price": "420$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041844285697.png",
+      "category": "Wall Split Type",
+      "id": 12
+    },
+    {
+      "title": "Maestro 33",
+      "description": "Fast cooling  Internal thread copper pipe  High-quality compressor  Wide voltage operation",
+      "price": "1100$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041855199991.png",
+      "category": "Floor Standing Type",
+      "id": 13
+    },
+    {
+      "title": "Maestro 58",
+      "description": "Fast cooling  Internal thread copper pipe  High-quality compressor  Wide voltage operation",
+      "price": "1200$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041901553655.png",
+      "category": "Floor Standing Type",
+      "id": 14
+    },
+    {
+      "title": "19",
+      "description": "Fast cooling  Internal thread copper pipe  High-quality compressor  Wide voltage operation",
+      "price": "200$",
+      "image": "http://www.chigogroup.com/upload/portal/20200604/202006041912418438.png",
+      "category": "Portable",
+      "id": 15
+    },
+    {
+      "title": "Chigo test",
+      "description": "test makers12312",
+      "price": "500$",
+      "image": "data:image/jpeg;base64,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",
+      "category": "Wall Split Type",
+      "id": 16
     }
   ],
   "comments": [
-    {
-      "description": "asd",
-      "id": 1620808783187
-    },
-    {
-      "description": "Хорошее качество, приемлемые цены!",
-      "id": 1620811313953
-    },
     {
       "description": "Заказал товар, привезли очень быстро!",
       "id": 1620811666052

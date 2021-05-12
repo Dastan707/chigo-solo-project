@@ -38,8 +38,6 @@ const Sidebar = () => {
     setAnchorEl(null);
   };
 
-
-
   const history = useHistory();
 
   const classes = useStyles();
@@ -51,6 +49,7 @@ const Sidebar = () => {
     const search = new URLSearchParams(history.location.search);
     return search.get('category');
   }
+
   const handleChangeMemory = (e) => {
     if (e.target.value === "All") {
       history.push(`${history.location.pathname.replace("category")}`);
@@ -79,7 +78,6 @@ const Sidebar = () => {
         </ MenuList >
       </div>
       <div className="radio__group">
-
         <RadioGroup className={classes.radio} aria-label="memory" name="memory1" value={memory} onChange={handleChangeMemory}>
           <FormControlLabel value="Wall Split Type" control={<Radio />} label="Wall Split Type" />
           <FormControlLabel value="Floor Standing Type" control={<Radio />} label="Floor Standing Type" />
@@ -92,40 +90,38 @@ const Sidebar = () => {
           Open Menu
       </Button>
         <Menu
-        className={classes.menu}
+          className={classes.menu}
           id="simple-menu"
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
           onClose={handleClose}
-        > 
+        >
           <Link to='/products/favorites' >
-          <MenuItem>
-            <ListItemIcon>
-              <StarsIcon color="action" fontSize='medium' />
-            </ListItemIcon>
-            <Typography variant="inherit">Favorites</Typography>
-          </MenuItem>
+            <MenuItem>
+              <ListItemIcon>
+                <StarsIcon color="action" fontSize='medium' />
+              </ListItemIcon>
+              <Typography variant="inherit">Favorites</Typography>
+            </MenuItem>
           </Link>
           <Link to='/login'>
-          <MenuItem>
-            <ListItemIcon>
-              <AccountCircleSharpIcon color="action" fontSize='medium' />
-            </ListItemIcon>
-            <Typography variant="inherit">Login</Typography>
-          </MenuItem>
+            <MenuItem>
+              <ListItemIcon>
+                <AccountCircleSharpIcon color="action" fontSize='medium' />
+              </ListItemIcon>
+              <Typography variant="inherit">Login</Typography>
+            </MenuItem>
           </Link>
           <Link to='/add'>
-          <MenuItem>
-            <ListItemIcon>
-              <AddCircleOutlineSharpIcon color="action" fontSize='medium' />
-            </ListItemIcon>
-            <Typography variant="inherit">Add New Product</Typography>
-          </MenuItem>
+            <MenuItem>
+              <ListItemIcon>
+                <AddCircleOutlineSharpIcon color="action" fontSize='medium' />
+              </ListItemIcon>
+              <Typography variant="inherit">Add New Product</Typography>
+            </MenuItem>
           </Link>
         </Menu>
-
-
       </div>
     </div>
   );
