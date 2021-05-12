@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { JSON_API } from '../helpers/constants';
+import { JSON_API, JSON_API_COMM } from '../helpers/constants';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 
@@ -12,6 +12,7 @@ const INIT_STATE = {
       paginationPages: 1,
       productsDetails: {},
       favorites: {},
+      comments: []
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -29,6 +30,8 @@ const reducer = (state = INIT_STATE, action) => {
                 ...state,
                 favorites: action.payload
             };
+        case "GET_COMMENTS_DATA" :
+            return {...state, comments: action.payload}
     default: return state
     }
 }
@@ -137,6 +140,25 @@ const ProductsContextProvider = ({ children }) => {
         let newFavorites = favorites.products.filter(elem => elem.item.id === id)
         return newFavorites.length > 0 ? true : false
     }
+
+    const getCommentsData = async () => {
+        let  { data }  = await axios.get(`${JSON_API_COMM}`)
+        dispatch({
+            type: 'GET_COMMENTS_DATA',
+            payload: data
+        })
+    }
+
+    const addComment = async (newComment) => {
+        await axios.post(`${JSON_API_COMM}`, newComment)
+        getCommentsData()
+        console.log(newComment)
+    }
+
+    const deleteComment = async (id) => {
+       await axios.delete(`${JSON_API_COMM}/${id}`)
+        getCommentsData()
+    }
     
 
     
@@ -150,6 +172,10 @@ const ProductsContextProvider = ({ children }) => {
             paginationPages: state.paginationPages,
             productsDetails: state.productsDetails,
             favorites: state.favorites,
+            comments: state.comments,
+            getCommentsData,
+            addComment,
+            deleteComment,
             getProducts,
             getProductsDetails,
             postProduct,
