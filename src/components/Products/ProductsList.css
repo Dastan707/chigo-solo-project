@@ -1,0 +1,39 @@
+@media all and (max-width: 1024px){
+    .products-bgcground_img{
+        display: none;
+    } 
+}
+
+@media all and (max-width: 768px){
+    .navbar__right{
+        font-size: 10px;
+    }
+    .inp-search{
+        width: 50px;
+        height: 10px;
+    }
+    .products{
+        display: flex;
+        flex-direction: column;
+    }
+    footer{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+@media all and (max-width: 414px){
+    .navbar{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .navbar__logo{
+        display: none;
+    }
+    .navbar-products{
+        display: flex;
+        flex-direction: column;
+    }
+}

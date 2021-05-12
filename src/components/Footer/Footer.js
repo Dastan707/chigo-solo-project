@@ -8,7 +8,7 @@ import IconYoutube from '../../assets/img/youtube-icon.png'
 const Footer = () => {
     return (
         <footer>
-            <div className='container'>
+            <div className='container__footer'>
                 <div className='footer__logo'>
                     <img src={Logo} alt='logo' />
                 </div>

@@ -7,6 +7,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Pagination from '@material-ui/lab/Pagination';
 import Sidebar from '../HomePage/Sidebar';
 import { CardContent, Container, Grid } from '@material-ui/core';
+import './ProductsList.css';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,7 +46,7 @@ const ProductsList = () => {
 
     return (
         <div className='products'>
-            <img style={{ width: '1300px' }} src={ProductsImage} alt='chigo' />
+            <img className='products-bgcground_img' style={{ width: '1300px' }} src={ProductsImage} alt='chigo' />
             <Sidebar />
             <Container className={classes.cardGrid} maxWidth="md">
             <Grid container spacing={4}>

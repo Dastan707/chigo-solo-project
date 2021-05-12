@@ -51,9 +51,9 @@ const ProductsDetails = ({ props }) => {
 
                 </div>
                 <div className='details-desc'>
-                    <h3 className='desc-list'>{productsDetails.category}</h3>
-                    <h1 className='desc-list'>{productsDetails.title}</h1>
-                    <p className='desc-list'>{productsDetails.description}</p>
+                    <h2 id='h3' className='desc-list'>{productsDetails.category}</h2>
+                    <h1 id='h1' className='desc-list'>{productsDetails.title}</h1>
+                    <h4 className='desc-list'>{productsDetails.description}</h4>
                     <h3 className='desc-list'>{productsDetails.price}</h3>
                     <ThemeProvider theme={theme}>
                     <Button variant="contained" color="primary" className={classes.margin}>

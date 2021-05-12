@@ -78,7 +78,7 @@ const Sidebar = () => {
           </Link>
         </ MenuList >
       </div>
-      <div>
+      <div className="radio__group">
 
         <RadioGroup className={classes.radio} aria-label="memory" name="memory1" value={memory} onChange={handleChangeMemory}>
           <FormControlLabel value="Wall Split Type" control={<Radio />} label="Wall Split Type" />

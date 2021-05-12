@@ -11,7 +11,7 @@ const CommentsList = () => {
     return (
         <div>
             {comments.map(item => (
-                <ul className='desc-list'>
+                <ul className='desc-list_comm'>
                     <li className='desc-item'>{item.description}</li>
                     <button className='btn-delete' onClick={() => deleteComment(item.id)}>Delete</button>
                 </ul>

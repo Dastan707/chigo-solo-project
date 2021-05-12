@@ -21,3 +21,10 @@
 display: inline;
 margin-right: 20px;
 }
+
+@media all and (max-width: 414px){
+    .radio__group{
+        display: flex;
+        flex-direction: column;
+    }
+}

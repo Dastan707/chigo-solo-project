@@ -5,13 +5,13 @@
     margin-top: 100px;
 }
 
-.desc-list{
+.desc-list_comm{
     width: 500px;
     height: 200px;
     background-color: #f2f2f2;
 }
 
-.desc-list li{
+.desc-list_comm li{
     margin-bottom: 20px;
     padding-top: 20px;
 }
