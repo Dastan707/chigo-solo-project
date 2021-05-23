@@ -32,7 +32,7 @@ const Header = () => {
                     <li className='navbar__list'>CONTACT US</li>
                 </ul>
                 <li className='search-item'>
-                    <input type='text' className='inp-search' onChange={handleValue} />
+                    <input  className='inp-search' onChange={handleValue} type='text' placeholder=' search...'/>
 
                     <div className={searchValue ? 'search-result' : 'close'}>
                         {searchData.map(item => (

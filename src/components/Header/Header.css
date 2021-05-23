@@ -86,7 +86,7 @@ header{
     width: 100px;
     height: 100px;
 }
-.inp-search{
+.inp-search{ 
     margin-top: 0;
     width: 150px;
     height: 22px;
@@ -95,6 +95,8 @@ header{
     font-weight: 400;
     font-size: 20px;
     border-radius: 20px;
-    border: 1px solid #bbbbbb;
+    border: 2px solid #bbbbbb;
 }
-  
+.inp-search:active{
+    border: none;
+}

@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
 import { JSON_API, JSON_API_COMM } from '../helpers/constants';
 import axios from 'axios';
-import { useHistory } from 'react-router';
+// import { useHistory } from 'react-router';
 
 export const productsContext = React.createContext();
 
@@ -37,7 +37,7 @@ const reducer = (state = INIT_STATE, action) => {
 }
 
 const ProductsContextProvider = ({ children }) => {
-    const history = useHistory();
+    // const history = useHistory();
 
     const getProducts = async (history) => {
         const search = new URLSearchParams(history.location.search)
@@ -113,7 +113,7 @@ const ProductsContextProvider = ({ children }) => {
         } else {
             favorites.products.push(newProduct)
         }
-        localStorage.setItem('favorites', JSON.stringify(favorites))
+         localStorage.setItem('favorites', JSON.stringify(favorites))
     }
 
     function getFavo() {
@@ -130,7 +130,7 @@ const ProductsContextProvider = ({ children }) => {
     }
 
 
-    function checkProductInFavo(id) {
+   function checkProductInFavo(id) {
         let favorites = JSON.parse(localStorage.getItem('favorites'));
         if (!favorites) {
             favorites = {
@@ -152,12 +152,12 @@ const ProductsContextProvider = ({ children }) => {
     const addComment = async (newComment) => {
         await axios.post(`${JSON_API_COMM}`, newComment)
         getCommentsData()
-        console.log(newComment)
+        // console.log(newComment)
     }
 
     const deleteComment = async (id) => {
         await axios.delete(`${JSON_API_COMM}/${id}`)
-        getCommentsData()
+         getCommentsData()
     }
 
 

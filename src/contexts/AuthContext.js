@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import app from "../base.js";
 
 
@@ -17,7 +17,7 @@ const reducer = (state = INIT_STATE, action) => {
 }
 
 const AuthContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, INIT_STATE)
+    // const [state, dispatch] = useReducer(reducer, INIT_STATE)
     const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(() => {
