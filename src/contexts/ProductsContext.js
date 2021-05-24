@@ -43,7 +43,7 @@ const ProductsContextProvider = ({ children }) => {
         const search = new URLSearchParams(history.location.search)
         search.set('_limit', 6)
         history.push(`${history.location.pathname}?${search.toString()}`)
-        let res = await axios.get(`${JSON_API}${window.location.search}`)
+        let res = await axios.get(`${JSON_API}/products${window.location.search}`)
         dispatch({
             type: "GET_PRODUCTS",
             payload: res
@@ -51,7 +51,7 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     async function getProductsDetails(id) {
-        let { data } = await axios.get(`${JSON_API}/${id}`)
+        let { data } = await axios.get(`${JSON_API}/products/${id}`)
         dispatch({
             type: "GET_PRODUCTS_DETAILS",
             payload: data
@@ -59,18 +59,18 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     const postProduct = (product) => { // добавление товара
-        axios.post(`${JSON_API}`, product)
+        axios.post(`${JSON_API}/products`, product)
     }
 
     const saveProduct = async (newEditedProduct, history) => { // сохранение товара (после редактирования)
-        axios.patch(`${JSON_API}/${newEditedProduct.id}`, newEditedProduct)
+        axios.patch(`${JSON_API}/products/${newEditedProduct.id}`, newEditedProduct)
         history.push('/products')
     }
 
     async function deleteProduct(id) { // удаление товара
-        await axios.delete(`${JSON_API}/${id}`)
+        await axios.delete(`${JSON_API}/products/${id}`)
 
-        let res = await axios.get(`${JSON_API}`)
+        let res = await axios.get(`${JSON_API}/products`)
         dispatch({
             type: "GET_PRODUCTS",
             payload: res
@@ -78,7 +78,7 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     async function editProduct(id) { // редактирование
-        let { data } = await axios(`${JSON_API}/${id}`)
+        let { data } = await axios(`${JSON_API}/products/${id}`)
         // console.log(data);
         dispatch({
             type: "EDIT_PRODUCTS",
@@ -87,7 +87,7 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     async function searchProduct(value) { // поиск товара
-        let { data } = await axios(`${JSON_API}?q=${value}`)
+        let { data } = await axios(`${JSON_API}/products?q=${value}`)
         // console.log(data);
         dispatch({
             type: "SEARCH",
@@ -142,7 +142,7 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     const getCommentsData = async () => {
-        let { data } = await axios.get(`${JSON_API_COMM}`)
+        let { data } = await axios.get(`${JSON_API_COMM}/comments`)
         dispatch({
             type: 'GET_COMMENTS_DATA',
             payload: data
@@ -150,13 +150,13 @@ const ProductsContextProvider = ({ children }) => {
     }
 
     const addComment = async (newComment) => {
-        await axios.post(`${JSON_API_COMM}`, newComment)
+        await axios.post(`${JSON_API_COMM}/comments`, newComment)
         getCommentsData()
         // console.log(newComment)
     }
 
     const deleteComment = async (id) => {
-        await axios.delete(`${JSON_API_COMM}/${id}`)
+        await axios.delete(`${JSON_API_COMM}/comments/${id}`)
          getCommentsData()
     }
 

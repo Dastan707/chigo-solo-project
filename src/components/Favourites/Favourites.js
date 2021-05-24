@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { productsContext } from '../../contexts/ProductsContext';
 import { CircularProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
-import './Favorites.css'
+import './Favourites.css'
 
 const useStyles = makeStyles((theme) => ({
     rootCart: {
@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Favorites = () => {
+const Favourites = () => {
     const classes = useStyles();
     const { getFavo, favorites, } = useContext(productsContext);
 
@@ -46,4 +46,4 @@ const Favorites = () => {
     );
 };
 
-export default Favorites;
+export default Favourites;

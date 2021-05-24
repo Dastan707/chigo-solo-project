@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/Header/Header';
+import Header from './components/Header/Header'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import HomePage from './components/HomePage/HomePage'
 import ProductsList from './components/Products/ProductsList'
@@ -11,7 +11,7 @@ import ProductsDetails from './components/Products/ProductsDetails';
 import AuthContextProvider from './contexts/AuthContext';
 import Register from './components/Register/Register';
 import LogIn from './components/LogIn/LogIn';
-import Favorites from './components/Favorites/Favorites';
+import Favourites from './components/Favourites/Favourites';
 // import Payment from './components/Payment/Payment';
 
 const Routes = () => {
@@ -29,7 +29,7 @@ const Routes = () => {
                     <Route exact path={`/details/:id`} component={ProductsDetails} />
                     <Route exact path='/register' component={Register} />
                     <Route exact path='/login' component={LogIn} />
-                    <Route exact path='/products/favorites' component={Favorites} />
+                    <Route exact path='/products/favourites' component={Favourites} />
                     {/* <Route exact path='/products/payment' component={Payment} /> */}
                 </Switch>
                 <Footer/>

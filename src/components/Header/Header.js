@@ -13,7 +13,6 @@ const Header = () => {
         searchProduct(e.target.value);
     }
 
-
     return (
         <header>
             <div className="navbar">
@@ -32,8 +31,7 @@ const Header = () => {
                     <li className='navbar__list'>CONTACT US</li>
                 </ul>
                 <li className='search-item'>
-                    <input  className='inp-search' onChange={handleValue} type='text' placeholder=' search...'/>
-
+                    <input className='inp-search' onChange={handleValue} type='text' placeholder='Search...'/>
                     <div className={searchValue ? 'search-result' : 'close'}>
                         {searchData.map(item => (
                             <Link to={`/details/${item.id}`}>
@@ -49,5 +47,4 @@ const Header = () => {
         </header>
     );
 };
-
 export default Header;

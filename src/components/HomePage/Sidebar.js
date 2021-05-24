@@ -97,12 +97,12 @@ const Sidebar = () => {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <Link to='/products/favorites' >
+          <Link to='/products/favourites' >
             <MenuItem>
               <ListItemIcon>
                 <StarsIcon color="action" fontSize='medium' />
               </ListItemIcon>
-              <Typography variant="inherit">Favorites</Typography>
+              <Typography variant="inherit">Favourites</Typography>
             </MenuItem>
           </Link>
           <Link to='/login'>

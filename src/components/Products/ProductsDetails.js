@@ -33,7 +33,7 @@ const ProductsDetails = ({ props }) => {
         }
         setInpDesc('')
         addComment(newComment)
-        console.log(newComment)
+        // console.log(newComment)
     }
 
     useEffect(() => {

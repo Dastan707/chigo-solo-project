@@ -5,13 +5,6 @@
 }
 
 @media all and (max-width: 768px){
-    .navbar__right{
-        font-size: 10px;
-    }
-    .inp-search{
-        width: 50px;
-        height: 10px;
-    }
     .products{
         display: flex;
         flex-direction: column;

@@ -11,8 +11,8 @@ import { productsContext } from '../../contexts/ProductsContext';
 import { Link } from 'react-router-dom';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import BookmarkIcon from '@material-ui/icons/Bookmark';
 import IconButton from "@material-ui/core/IconButton";
+import StarIcon from '@material-ui/icons/Star';
 
 
 const useStyles = makeStyles({
@@ -76,11 +76,11 @@ return (
                     onClick={() => addProductToFavo(item)}
                     color={checkProductInFavo(item.id)? 'secondary' : 'primary'}
                     aria-label="share">
-                    <BookmarkIcon />
-                </IconButton>
+                    <StarIcon/>
+                </IconButton> 
       </CardActions>
     </Card>
 )
 };
 
-export default ProductsCard;
+export default ProductsCard
